@@ -1,0 +1,46 @@
+h1 {
+	font-family: cursive;
+	text-align: center;
+}
+
+h2 {
+	font-family: sans-serif;
+	text-align: center;
+}
+
+#customerlist {
+	visibility: hidden;
+	position: absolute;
+	height: 75%;
+	width: 100%;
+	overflow: scroll;
+	background-color: #ccffff;
+}
+
+#orderhistory {
+	visibility: hidden;
+	position: absolute;
+	height: 75%;
+	width: 100%;
+	overflow: scroll;
+	background-color: #99ffff;
+}
+
+#update {
+	visibility: hidden;
+	position: absolute;
+	height: 75%;
+	width: 100%;
+	overflow: scroll;
+	background-color: #88ffff;
+}
+
+table, th, td {
+	background-color: white;
+	table-layout: auto;
+	padding: 5px;
+	text-align: center;
+}
+
+
+

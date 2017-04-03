@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+	
+<html>
+	<head>
+		<title>Assignment 3</title>
+		<link rel="stylesheet" type="text/css" href="styles/assignment3.css" />
+		<script src="js/assignment3.js"></script>
+	</head>
+	
+	<body>
+		<section id="title">
+			<h1>Module 2 Example</h1>
+			<hr>
+			<select onchange="MenuChoice(value)" id="menu">
+				<option value="None">Please select an option.</option>
+				<option value="customerlist">List Customers</option>
+				<option value="orderhistory">Store Order History</option>
+				<option value="update">Update Store Data</option>
+			</select>
+		</section>
+		<hr>
+		<section id="customerlist">
+			<h2>Store List</h2>
+			<hr>
+			<p id="liststores">Store List</p>
+		</section>
+		
+        <section id="orderhistory">
+			<h2>Store Order History</h2>
+			<p id="books">Order History</p>
+		</section>
+		
+		<section id="update">
+			<h3>Customer Information</h3>
+			<hr>
+			<label>Order Date: </label>
+			<input type="text" id="orderdate" disabled="true">
+			<br>
+            
+            <label>Order ID: </label>
+			<input type="text" id="orderid" disabled="true">
+			<br>
+            
+            <label>Ship Address: </label>
+			<input type="text" id="shipaddress">
+			<br>
+            
+            <label>Ship City: </label>
+			<input type="text" id="shipcity">
+			<br>
+            
+            <label>Ship Name: </label>
+			<input type="text" id="shipname">
+			<br>
+			
+			<label>Ship Post Code: </label>
+			<input type="text" id="shippostcode">
+			<br>
+            
+            <label>Shipped Date: </label>
+			<input type="text" id="shippeddate" disabled="true">
+			<br>
+			
+			<button onclick="CustomerUpdate()">Update Customer Information</button>
+		</section>
+		
+	</body>
+</html>
