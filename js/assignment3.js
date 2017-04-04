@@ -97,9 +97,9 @@ function ListCustomers() //This sends a request to the getAllCustomers service a
 		function GenerateOutput(result) {
 			var display = "<table><tr><th>Book Name</th><th>Total Ordered</th></tr>";
 			
-			var count = 0;
+			// var count = 0;
 			
-			for(count = 0; count < result.length; count++)
+			for(var count = 0; count < result.length; count++)
 				{
 					display += "<tr><td>" + result[count].BookName + "</td><td>" + result[count].SaleNumber + "</td></tr>";
 				}
@@ -123,10 +123,6 @@ xmlhttp.onreadystatechange = function()
       if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
       {
          var output = JSON.parse(xmlhttp.responseText);
-				 // test
-				 	var outcome = result.WasSuccessful;
-					var error = result.Exception;
-				 // test end
 				 //document.getElementById("orderdate").value = output[0].OrderDate;
          document.getElementById("orderid").value = output[0].OrderID;
          document.getElementById("shipaddress").value = output[0].ShipAddress;
@@ -161,15 +157,18 @@ xmlhttp.onreadystatechange = function()
 			
 			//var url = "https://student.business.uab.edu/jsonwebservice/service1.svc/updateStoreAddress/";
 			var url = "https://student.business.uab.edu/jsonwebservice/service1.svc/updateOrderAddress/";
-			var orderid = Number(document.getElementById("orderID").value);
-			var shipname = document.getElementById("storename").value;
-			var shipcity = document.getElementById("storecity").value;
+			var orderid = Number(document.getElementById("orderid").value);
+			var shipaddress = document.getElementById("shipaddress").value;
+			var shipcity = document.getElementById("shipcity").value;
+			var shipname = document.getElementById("shipname").value;
+			var shippostcode = document.getElementById("shippostcode").value;
 			
 			// Creates the JSON string to be sent for the update operation
-			var parameters = '{"StoreID":' + orderid + ',"StoreName":"' + shipname + '", "StoreCity":"' + shipcity + '"}';
+			var parameters = '{"OrderID":' + orderid + ',"ShipAddress":"' + shipaddress + '","ShipCity":"' + shipcity + '","ShipName":"' + shipname + '","ShipPostcode":"' + shippostcode + '"}';
 			xmlhttp.open("POST", url, true);
 			xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlcoded");
 			xmlhttp.send(parameters);
+			xmlhttp.send(orderid);
 		}
 		
 		// Function that displays the result of an operation that adds, deletes, or updates data
